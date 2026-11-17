@@ -1,420 +1,178 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sara Zemrak - Workforce Analytics and Compensation</title>
-<meta name="description" content="Workforce analytics and compensation work: pay structures, SQL against source systems, and modelling that leadership teams act on.">
-
-<!-- ============================================================
-     Site is live at its URL but NOT indexed by search engines.
-     Delete the line below if you ever want it findable by search.
-     ============================================================ -->
-<meta name="robots" content="noindex, nofollow">
-
-<style>
-:root {
-  --bg: #ffffff;
-  --surface: #f7f7f5;
-  --text: #1a1c20;
-  --muted: #5c6169;
-  --line: #e2e2df;
-  --accent: #2c4a6e;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14161a;
-    --surface: #1c1f25;
-    --text: #e8e7e4;
-    --muted: #9aa0a8;
-    --line: #2a2e35;
-    --accent: #8fb3d9;
-  }
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
-
-.wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ---------- header ---------- */
-
-header {
-  padding: 80px 0 56px;
-  border-bottom: 1px solid var(--line);
-}
-
-h1 {
-  font-size: 2.1rem;
-  line-height: 1.2;
-  margin: 0 0 8px;
-  letter-spacing: -0.02em;
-}
-
-.role {
-  font-size: 1.1rem;
-  color: var(--accent);
-  font-weight: 600;
-  margin: 0 0 20px;
-}
-
-.intro {
-  font-size: 1.05rem;
-  color: var(--muted);
-  margin: 0 0 28px;
-  max-width: 60ch;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.links a {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.92rem;
-  transition: border-color .15s, color .15s;
-}
-
-.links a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* ---------- sections ---------- */
-
-section {
-  padding: 56px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-h2 {
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  font-weight: 600;
-  margin: 0 0 32px;
-}
-
-h3 {
-  font-size: 1.15rem;
-  margin: 0 0 6px;
-  letter-spacing: -0.01em;
-}
-
-/* ---------- work cards ---------- */
-
-.case {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 26px 28px;
-  margin-bottom: 20px;
-}
-
-.case:last-child { margin-bottom: 0; }
-
-.case .context {
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 0 0 14px;
-}
-
-.case p { margin: 0 0 14px; }
-.case p:last-child { margin-bottom: 0; }
-
-.result {
-  border-left: 3px solid var(--accent);
-  padding-left: 14px;
-  font-weight: 500;
-}
-
-/* ---------- capability grid ---------- */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
-}
-
-.grid h3 { font-size: 1rem; }
-
-.grid p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-/* ---------- experience ---------- */
-
-.role-entry {
-  display: grid;
-  grid-template-columns: 130px 1fr;
-  gap: 20px;
-  padding: 18px 0;
-  border-top: 1px solid var(--line);
-}
-
-.role-entry:first-of-type { border-top: none; padding-top: 0; }
-
-.role-entry .when {
-  color: var(--muted);
-  font-size: 0.9rem;
-  padding-top: 2px;
-}
-
-.role-entry h3 { margin-bottom: 2px; }
-
-.role-entry .org {
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-@media (max-width: 560px) {
-  .role-entry { grid-template-columns: 1fr; gap: 4px; }
-  header { padding-top: 56px; }
-  h1 { font-size: 1.75rem; }
-}
-
-/* ---------- footer ---------- */
-
-footer {
-  padding: 48px 0 72px;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-footer a { color: var(--accent); }
-</style>
+<title>Sara Zemrak · Compensation and Workforce Analytics</title>
+<meta name="description" content="Sara Zemrak builds salary bands, cleans up HR data, and turns it into dashboards small teams can run. Compensation and workforce analytics with SQL, Power BI, and Excel.">
+<link rel="canonical" href="https://sarazemrak.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sara Zemrak · Compensation and Workforce Analytics">
+<meta property="og:description" content="Pay structures and people data that leaders can act on.">
+<meta property="og:url" content="https://sarazemrak.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
 
-<header>
-  <h1>Sara Zemrak</h1>
-  <p class="role">Workforce Analytics &middot; Compensation &amp; Pay Structures &middot; SQL, Power BI, Advanced Excel</p>
-
-  <p class="intro">
-    I build pay structures and the analysis that decides them. That means querying the
-    source systems myself, modelling what a decision costs, and producing something a
-    leadership team can act on. I hold an MSc in Applied Data Science and an MBA, and
-    I lead a regional salary survey for the Association of Legal Administrators.
-  </p>
-
-  <div class="links">
-    <a href="mailto:sarazemrak@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/sarazemrak">LinkedIn</a>
-  </div>
+<header class="site-header">
+  <a class="brand" href="./">Sara Zemrak</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="resume/">Resume</a>
+    <a class="nav-cta" href="#contact">Contact</a>
+  </nav>
 </header>
 
-<section>
-  <h2>Selected Work</h2>
+<main id="main">
 
-  <div class="case">
-    <h3>Cloud Adoption Across the EU</h3>
-    <p class="context">Power BI &middot; Eurostat, isoc_cicce_use</p>
-    <p>Eurostat publishes the share of enterprises buying paid cloud computing
-       services delivered over the internet, split into intermediate and
-       sophisticated tiers. This dashboard covers 36 countries and two enterprise
-       size bands, from 2021 to 2025.</p>
-    <p>The two tiers are not parallel, and that decides how the whole thing reads.
-       Sophisticated counts any firm buying security, database or development
-       services. Intermediate counts only firms whose highest tier is intermediate,
-       so a firm that adds a database service leaves the intermediate group. A
-       falling intermediate share means firms moving up, not firms dropping out.</p>
-    <p>Where the two size bands are combined, rates are weighted by enterprise count
-       instead of averaged. Enterprise counts are unavailable for 2025 and are
-       carried forward from 2024 where used, flagged as estimated and tested for
-       error against the 2023 to 2024 change.</p>
-    <p class="result">Large firms outpaced mid-sized firms in 25 of 31 countries.
-       <a href="cloud-adoption-dashboard.pdf">View the dashboard (PDF, 3 pages)</a></p>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Hi, I'm Sara</p>
+    <h1 class="display">Pay structures and people data that leaders can
+      <span class="scribble">act on.<svg viewBox="0 0 486 65" preserveAspectRatio="none" aria-hidden="true"><path class="ink" d="M62 13 85 13 94 14 148 27 217 38 239 39 293 36 346 34 387 29 436 21 448 20 467 22 471 25 473 30 471 34 466 37 447 36 431 37 362 48 231 53 202 50 169 44 136 37 102 27 83 23 56 25 15 34 13 32 12 29 15 25 19 23 39 17 62 13Z"/></svg></span></h1>
+    <p class="lede">I build salary bands, clean up messy HR data, and turn it into dashboards a small team can run on its own.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#services">See how I can help</a>
+      <a class="btn btn-ghost" href="#work">View my work</a>
+    </div>
+    <div class="now-strip">
+      <div><span class="kicker">Now building</span><span>A map-based payroll compliance explorer</span></div>
+      <div><span class="kicker">Open to</span><span>Contract projects and full-time roles</span></div>
+    </div>
   </div>
 
-  <!-- Further cards go here as they are finished. Template:
-
-  <div class="case">
-    <h3>Title</h3>
-    <p class="context">Tool &middot; Dataset</p>
-    <p>What it shows.</p>
-    <p>How it is built.</p>
-    <p class="result">The finding. <a href="file.pdf">Link</a></p>
-  </div>
-
-  -->
-
-</section>
-
-<section>
-  <h2>What I Work On</h2>
-
-  <div class="grid">
-
-    <div>
-      <h3>Compensation and Pay Structures</h3>
-      <p>Job evaluation, grading and job architecture. Salary bands built and roles
-         levelled into them at three employers. Benchmarking, merit and bonus
-         modelling, and the annual review cycle owned end to end.</p>
-    </div>
-
-    <div>
-      <h3>Data and SQL</h3>
-      <p>Writing and modifying queries against production time, billing and payroll
-         databases. Data quality work, reconciliation between systems that disagree,
-         and tracing a discrepancy back to its source.</p>
-    </div>
-
-    <div>
-      <h3>Reporting and BI</h3>
-      <p>Power BI models weighing fully loaded people cost against revenue produced.
-         Advanced Excel and VBA, including automation built to remove manual entry
-         error from a payout process.</p>
-    </div>
-
-    <div>
-      <h3>Statistical Analysis</h3>
-      <p>Python and R for analysis and modelling, including regression and diversity
-         analytics applied to a company's recruitment practice and presented to its
-         board. MSc Applied Data Science.</p>
-    </div>
-
-    <div>
-      <h3>AI Enablement</h3>
-      <p>Specified and built an applicant tracking system in house on Claude, running
-         in production against real hiring. Claude daily, ChatGPT regularly. Evaluating
-         AI tools and assessing third party AI risk.</p>
-    </div>
-
-    <div>
-      <h3>HR Systems</h3>
-      <p>Four HCM and payroll platforms administered end to end, ADP, Paylocity,
-         Paychex and GNSA, and one of them implemented from nothing including
-         configuration and the full employee population. Workday Recruiting as
-         primary administrator.</p>
-    </div>
-
-    <div>
-      <h3>Governance and Compliance</h3>
-      <p>Led an ISO 9001 implementation across two divisions, from gap analysis to
-         the start of certification. Statutory leave administration and multi state
-         employment compliance. Tracking pay transparency law, including the EU
-         Pay Transparency Directive.</p>
-    </div>
-
+  <div class="hero-visual">
+    <figure class="band-card" id="band">
+      <figcaption>Try it. Move one role's pay against its band.</figcaption>
+      <svg viewBox="0 0 400 112" role="img" aria-label="Illustrative salary band">
+        <line x1="20" y1="86" x2="380" y2="86" stroke="#DDD6CA"/>
+        <rect x="106.4" y="44" width="187.2" height="30" fill="#D9E6E4"/>
+        <line x1="200" y1="40" x2="200" y2="78" stroke="#1F5F5B" stroke-width="2"/>
+        <text x="106.4" y="102" font-size="11" fill="#5F584F" text-anchor="middle" font-family="Inter, sans-serif">Min</text>
+        <text x="200" y="102" font-size="11" fill="#5F584F" text-anchor="middle" font-family="Inter, sans-serif">Mid</text>
+        <text x="293.6" y="102" font-size="11" fill="#5F584F" text-anchor="middle" font-family="Inter, sans-serif">Max</text>
+        <circle class="dot" cx="92" cy="59" r="7" stroke="#FFFFFF" stroke-width="2" style="fill: var(--spark)"/>
+        <g class="note-arrow" transform="translate(-12 19.8) scale(0.051)"><path class="ink" d="M456 15 461 14 466 16 467 20 465 24 430 39 393 60 353 86 304 125 227 200 194 238 164 280 142 319 83 443 66 487 62 501 59 517 57 520 54 519 53 514 58 490 68 460 85 420 142 302 162 267 184 237 211 205 236 178 289 127 317 102 355 73 386 53 418 34 446 21 456 15ZM15 439 19 439 24 449 39 498 55 542 57 542 94 500 114 481 124 475 128 477 127 480 96 511 70 541 59 557 53 571 49 574 45 573 42 570 47 553 45 538 31 497 21 462 14 442 15 439Z"/></g>
+        <text class="note" x="118" y="16">below range, worth a look</text>
+      </svg>
+      <label class="band-label">
+        <span>Pay: <strong data-out="pay">$58,000</strong></span>
+        <input type="range" min="50000" max="100000" step="500" value="58000">
+      </label>
+      <dl class="band-stats">
+        <div><dt>Range penetration</dt><dd data-out="pen">Below</dd></div>
+        <div><dt>Compa-ratio</dt><dd data-out="compa">0.77</dd></div>
+        <div><dt>Cost to minimum</dt><dd data-out="cost">$4,000</dd></div>
+      </dl>
+    </figure>
   </div>
 </section>
 
-<section>
-  <h2>Professional Leadership</h2>
-
-  <h3>Association of Legal Administrators, Oregon Chapter</h3>
-  <p class="org" style="color:var(--muted); margin:0 0 12px;">Board Member and Resources Director</p>
-  <p style="margin:0;">I run the chapter's regional salary survey, now in its third year,
-     covering around 45 participating firms and roughly 40 distinct job titles. It is
-     the same benchmark data I build pay bands against, which means I produce the
-     market data rather than only buying it.</p>
+<section class="section" id="work">
+  <div class="section-head">
+    <h2 class="section-title">Selected work</h2>
+    <a href="https://github.com/sarazemrak">All projects on GitHub</a>
+  </div>
+  <div class="card-grid">
+    <a class="work-card" href="work/cloud-adoption/">
+      <div class="shot"><img src="assets/art/shot-cloud.webp" alt="Line chart from the Power BI dashboard: sophisticated cloud adoption rising from about 52 to 70 percent between 2021 and 2025, while intermediate adoption stays near 5 percent." width="800" height="600" loading="lazy"></div>
+      <div class="tags"><span class="tag tag-tool">Power BI</span><span class="tag">Eurostat</span></div>
+      <h3 class="work-title">Where European cloud adoption is growing</h3>
+      <p>The Nordic leaders are near saturation. The fastest growth since 2021 is in central and eastern Europe.</p>
+      <span class="card-cta">Read the case study</span>
+    </a>
+    <!-- Device complaint card hidden until the dashboard and write-up are done.
+    <div class="work-card">
+      <div class="shot">Dashboard screenshot</div>
+      <div class="tags"><span class="tag tag-tool">Power BI</span><span class="tag">FDA reports</span></div>
+      <h3 class="work-title">Medical device complaint trends</h3>
+      <p>Public FDA adverse event reports for coronary stents, cleaned and tracked over time.</p>
+      <span class="card-cta muted">Write-up coming soon</span>
+    </div>
+    -->
+    <a class="work-card" href="work/payroll-explorer/">
+      <div class="shot build" role="img" aria-label="Build progress: Phase 0 done, Phase 1 in progress, four phases to go."><p class="build-h">Build progress</p><ol class="phases"><li class="done"><span class="ph-n">0</span><span class="ph-t">Setup and Ireland map</span><span class="ph-s">Done</span></li><li class="now"><span class="ph-n">1</span><span class="ph-t">Rules table</span><span class="ph-s">In progress</span></li><li class=""><span class="ph-n">2</span><span class="ph-t">Dashboard</span></li><li class=""><span class="ph-n">3</span><span class="ph-t">Profile filter</span></li><li class=""><span class="ph-n">4</span><span class="ph-t">UK and Scotland</span></li><li class=""><span class="ph-n">5</span><span class="ph-t">Detail layer</span></li></ol></div>
+      <div class="tags"><span class="tag tag-tool">Python</span><span class="tag">In progress</span></div>
+      <h3 class="work-title">Payroll Compliance Explorer</h3>
+      <p>Pick a place and get the payroll rules that apply there as a checklist, with a source for every rule.</p>
+      <span class="card-cta">See where the build is</span>
+    </a>
+  </div>
 </section>
 
-<section>
-  <h2>Experience</h2>
-
-  <p style="font-style:italic; color:var(--muted); font-size:0.95rem; margin:-12px 0 24px;">
-    In law firms the Administrator is the senior business operations role, covering HR,
-    finance and practice management. It is the function the Association of Legal
-    Administrators exists to serve.</p>
-
-  <div class="role-entry">
-    <div class="when">Nov 2024 &ndash; present</div>
-    <div>
-      <h3>HR and Operations Administrator</h3>
-      <p class="org">Markowitz Herbold PC &middot; Reward, Cost and Planning Analytics</p>
-    </div>
+<section class="section" id="services">
+  <div class="section-head">
+    <h2 class="section-title">Projects I take on</h2>
+    <p>Remote, scoped up front, and quick to turn around. I work from public data or your anonymized export.</p>
   </div>
-
-  <div class="role-entry">
-    <div class="when">Jun 2023 &ndash; Oct 2024</div>
-    <div>
-      <h3>Firm Administrator</h3>
-      <p class="org">Rizzo Bosworth &middot; HR, Finance and Performance Reporting</p>
-    </div>
+  <div class="service-grid">
+    <article class="service">
+      <svg viewBox="0 0 889 222" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><path class="ink" d="M857 8 865 7 870 9 873 14 875 23 882 189 880 199 873 203 864 205 860 204 856 201 855 197 852 128 851 126 849 125 482 124 480 126 481 179 480 183 476 187 469 189 461 187 457 183 455 179 455 135 455 125 453 123 99 120 41 118 39 120 39 124 38 205 33 212 25 214 21 213 17 210 14 203 7 29 9 20 12 17 17 15 29 15 33 16 37 19 38 23 40 30 39 96 41 99 230 97 454 97 456 94 458 28 462 21 468 18 474 22 477 28 480 92 481 97 834 98 848 98 851 96 849 21 851 12 857 8Z"/></svg>
+      <h3>Salary Range Check</h3>
+      <p>Market ranges for up to three roles, built from public wage data and ready for a pay-transparent job posting.</p>
+    </article>
+    <article class="service">
+      <svg viewBox="0 0 656 536" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><path class="ink" d="M306 13 314 13 330 24 398 80 438 118 437 112 427 88 426 81 429 76 437 73 442 72 447 75 453 82 470 139 470 145 467 152 460 156 444 154 409 146 399 141 396 136 398 130 402 127 410 126 411 125 356 78 307 32 303 27 301 21 303 15 306 13ZM248 43 252 44 255 50 257 84 259 256 257 503 262 504 414 503 414 359 416 238 418 222 421 217 425 215 429 216 433 222 435 239 435 428 433 502 435 503 466 504 533 502 556 426 561 412 566 405 564 330 563 328 550 324 528 304 512 284 509 276 509 270 511 266 519 260 527 260 537 268 562 295 564 295 566 208 565 206 550 200 542 193 530 172 527 155 530 132 537 118 543 112 551 107 558 105 568 104 573 105 586 111 602 120 614 134 620 150 619 164 611 182 598 197 583 206 585 243 586 290 588 289 602 274 622 250 635 248 644 263 642 271 633 281 600 312 586 318 585 320 583 409 594 430 606 474 615 494 615 501 627 502 631 505 635 513 633 519 626 524 620 524 295 521 259 521 247 523 235 520 108 520 38 518 33 522 26 523 21 520 19 514 19 498 11 204 11 189 13 186 17 184 21 185 23 188 25 200 37 505 39 506 79 505 230 505 238 504 240 503 239 284 239 132 241 53 244 46 248 43ZM554 128 552 132 549 147 549 160 552 170 556 177 563 183 570 185 579 184 587 177 595 166 598 156 597 148 591 140 579 132 569 129 554 128ZM573 438 569 450 556 502 562 503 594 502 585 480 573 438Z"/></svg>
+      <h3>People Data Snapshot</h3>
+      <p>Your HR export cleaned and turned into a one-page dashboard on headcount, turnover, and pay.</p>
+    </article>
+    <article class="service">
+      <svg viewBox="0 0 359 211" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><path class="ink" d="M335 16 340 17 343 22 345 25 343 29 320 53 288 100 274 131 264 166 260 170 252 170 244 163 235 151 224 135 223 129 226 128 229 129 248 151 250 152 251 151 263 117 270 100 283 78 318 30 328 19 335 16ZM87 81 175 81 180 83 181 87 180 91 177 93 153 94 24 93 20 92 18 89 19 84 23 82 87 81ZM154 129 178 128 182 130 185 134 185 138 181 142 176 143 29 144 18 142 15 138 18 134 34 132 154 129ZM36 182 173 182 181 183 184 187 183 193 180 196 177 196 40 196 23 195 19 191 19 186 22 183 36 182Z"/></svg>
+      <h3>Hiring Process Tune-up</h3>
+      <p>A review of your posting, interview steps, and offer process, with a short list of fixes.</p>
+    </article>
+    <article class="service">
+      <svg viewBox="0 0 478 395" preserveAspectRatio="xMinYMax meet" aria-hidden="true"><path class="ink" d="M418 11 425 12 429 16 431 20 463 291 467 329 464 334 459 337 450 339 405 343 387 346 319 355 100 381 68 384 56 383 52 381 49 375 16 124 11 78 12 72 14 67 18 66 23 66 50 61 393 15 418 11ZM400 28 28 77 65 363 261 340 385 326 400 326 451 318 433 176 416 33 414 27 400 28ZM365 99 372 101 376 108 378 143 376 152 371 154 364 151 363 148 363 134 362 132 361 132 290 214 277 226 269 228 265 228 193 189 177 181 174 181 93 319 88 324 82 322 81 317 91 297 142 203 164 165 168 164 179 167 241 197 273 211 337 133 337 131 328 133 323 132 320 127 321 122 348 110 365 99Z"/></svg>
+      <h3>Dashboards and Data Cleanup</h3>
+      <p>A Power BI or Excel dashboard on your own data, with the cleanup and notes to keep it running.</p>
+    </article>
   </div>
-
-  <div class="role-entry">
-    <div class="when">Oct 2021 &ndash; May 2023</div>
-    <div>
-      <h3>Office Administrator</h3>
-      <p class="org">Rose Law &middot; HR, Finance and Firm Operations</p>
-    </div>
-  </div>
-
-  <div class="role-entry">
-    <div class="when">May 2019 &ndash; Oct 2021</div>
-    <div>
-      <h3>HR and Finance Manager</h3>
-      <p class="org">Norway Labs &middot; Precision instrument repair</p>
-    </div>
-  </div>
-
-  <div class="role-entry">
-    <div class="when">May 2018 &ndash; May 2019</div>
-    <div>
-      <h3>Director of Operations</h3>
-      <p class="org">Alleviate Tax</p>
-    </div>
-  </div>
-
+  <a class="btn btn-primary" href="#contact">Ask about a project</a>
 </section>
 
-<section>
-  <h2>Education</h2>
-
-  <div class="role-entry">
-    <div class="when">2023</div>
-    <div>
-      <h3>MSc Applied Data Science</h3>
-      <p class="org">Portland State University</p>
+<section class="section about" id="about">
+  <div class="about-side">
+    <h2 class="section-title">About</h2>
+    <div class="photo-wrap">
+      <img class="about-photo" src="assets/sara.jpg" alt="Sara Zemrak" width="800" height="800" loading="lazy">
+      <img class="photo-flower" src="assets/art/flower.webp" alt="" width="488" height="1000" loading="lazy">
     </div>
   </div>
-
-  <div class="role-entry">
-    <div class="when">2023</div>
-    <div>
-      <h3>MBA</h3>
-      <p class="org">Portland State University</p>
-    </div>
+  <div class="about-body">
+    <p>My career took off at Alleviate Tax, a financial services startup in Irvine, California, where I became Director of Operations within three months. I ran HR for the team and kept picking up the work nobody else owned: pay structures, hiring data, and the systems behind them. That's where compensation and people data became my focus.</p>
+    <p>I've worked in compensation for eight years, across five employers. I've built job levels and salary bands, priced roles against the market, and run annual pay reviews end to end. For three years I've also run the Oregon salary survey for the Association of Legal Administrators, covering about 45 firms. That includes working with Gallagher to make its job descriptions hold up for firms of every size. So I produce market data as well as use it.</p>
+    <p>Data runs through all of it. I hold an MBA and an MSc in Applied Data Science, with a focus on HR analytics, from Portland State University. I do my own analysis, build my own dashboards, and follow pay transparency law closely, including the EU directive.</p>
+    <p>Outside work, I draw in Procreate, mostly for my kids.</p>
+    <!-- Card images (assets/art/card-*.webp) and window-scene.webp are kept for a possible Drawings page. -->
   </div>
-
 </section>
 
-<footer>
-  <p>Open to compensation, reward and workforce analytics roles.
-     Reach me at <a href="mailto:sarazemrak@gmail.com">sarazemrak@gmail.com</a>.</p>
+<section class="section contact" id="contact">
+  <h2 class="section-title">Have a pay or people-data problem? Tell me about it.</h2>
+  <div class="contact-links">
+    <a class="email" href="mailto:sarazemrak@gmail.com">sarazemrak@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sarazemrak">LinkedIn</a>
+    <a href="https://github.com/sarazemrak">GitHub</a>
+    <p>Portland metro area, in person. Remote with teams anywhere.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="sig"><svg viewBox="0 0 321 398" aria-hidden="true"><path class="ink" d="M220 17 227 17 231 21 232 47 234 62 229 126 231 174 268 204 302 227 306 232 307 237 302 245 295 249 283 250 247 249 227 250 220 277 220 302 214 350 212 374 209 381 202 384 197 380 178 336 167 315 151 276 140 253 135 252 118 251 27 254 20 250 15 244 14 239 19 228 31 215 67 178 95 154 89 138 73 105 58 64 57 56 59 49 64 46 68 46 80 50 109 73 146 98 220 17Z"/></svg>Sara Zemrak · Compensation and workforce analytics</span>
+  <span>Public or synthetic data only. No employer data on this site.</span>
 </footer>
 
 </div>
-
+<script src="assets/band.js"></script>
 </body>
 </html>

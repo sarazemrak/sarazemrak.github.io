@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where European cloud adoption is growing · Sara Zemrak</title>
+<meta name="description" content="A Power BI case study on Eurostat cloud adoption data across 36 countries, 2021 to 2025. Growth has moved to central and eastern Europe.">
+<link rel="canonical" href="https://sarazemrak.github.io/work/cloud-adoption/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Where European cloud adoption is growing">
+<meta property="og:description" content="A change view of Eurostat cloud adoption data, 36 countries, 2021 to 2025.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<header class="site-header">
+  <a class="brand" href="../../">Sara Zemrak</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="../../#work">Work</a>
+    <a href="../../#services">Services</a>
+    <a href="../../#about">About</a>
+    <a href="../../resume/">Resume</a>
+    <a class="nav-cta" href="../../#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="case-head">
+  <a class="back" href="../../#work">Back to all work</a>
+  <p class="kicker">Case study · Power BI</p>
+  <h1 class="display">Where European cloud adoption is <em>growing</em></h1>
+  <p class="lede">A ranking by today's levels puts the Nordic countries on top. I wanted to know where adoption is moving, so I rebuilt the view around change since 2021.</p>
+</section>
+
+<dl class="facts">
+  <div><dt>Data</dt><dd>Eurostat enterprise cloud use</dd></div>
+  <div><dt>Scope</dt><dd>36 countries, two firm sizes, 2021 to 2025</dd></div>
+  <div><dt>Tools</dt><dd>Excel, Power BI, DAX</dd></div>
+  <div><dt>Links</dt><dd><a href="../../cloud-adoption-dashboard.pdf">Dashboard (PDF)</a></dd></div>
+</dl>
+
+<a class="hero-link" href="../../cloud-adoption-dashboard.pdf"><img class="hero-shot hero-img" src="cloud-dashboard.webp" alt="The Growth page of the Power BI dashboard: company and adopter counts, the top and bottom five countries by change in intermediate and sophisticated adoption, and a line chart of both tiers from 2021 to 2025." width="1992" height="1152"></a>
+
+<section class="finding">
+  <div class="copy">
+    <h2 class="section-title">What I found</h2>
+    <p>Among large firms, the biggest gains in sophisticated cloud services came from Malta, Poland, Lithuania, Hungary, and Croatia. Sweden and Luxembourg barely moved.</p>
+    <p>The leaders are close to saturation. The growth is in central and eastern Europe.</p>
+  </div>
+  <figure class="bars">
+    <figcaption>Change in sophisticated cloud adoption, firms with 250+ staff, 2021 to 2025 (percentage points)</figcaption>
+    <div class="bar-row"><span>Malta</span><div class="bar-track"><div class="bar-fill" style="width:95.6%"></div></div><span>+34.4</span></div>
+    <div class="bar-row"><span>Poland</span><div class="bar-track"><div class="bar-fill" style="width:94.2%"></div></div><span>+33.9</span></div>
+    <div class="bar-row"><span>Lithuania</span><div class="bar-track"><div class="bar-fill" style="width:83.9%"></div></div><span>+30.2</span></div>
+    <div class="bar-row"><span>Hungary</span><div class="bar-track"><div class="bar-fill" style="width:82.8%"></div></div><span>+29.8</span></div>
+    <div class="bar-row"><span>Croatia</span><div class="bar-track"><div class="bar-fill" style="width:67.2%"></div></div><span>+24.2</span></div>
+    <div class="bar-row"><span>Sweden</span><div class="bar-track"><div class="bar-fill low" style="width:24.4%"></div></div><span>+8.8</span></div>
+    <div class="bar-row"><span>Luxembourg</span><div class="bar-track"><div class="bar-fill low" style="width:4.4%"></div></div><span>+1.6</span></div>
+  </figure>
+</section>
+
+<section class="notes">
+  <div class="notes-intro">
+    <h2 class="section-title">Oops, glad I caught that</h2>
+    <p>Four spots where this data tried to trip me up, and what I did about each one.</p>
+  </div>
+  <div class="note-grid">
+    <article><h3>A flipped ranking</h3><p>An early formula divided where it should have multiplied. Every chart pointed the wrong way until the counts stopped making sense next to the rates.</p></article>
+    <article><h3>Weighted, not averaged</h3><p>Combined rates are weighted by firm count. A plain average of the two size bands overstated some countries by seven points.</p></article>
+    <article><h3>Read the definitions</h3><p>Eurostat's intermediate tier means "at most" intermediate. A falling share there is firms moving up, not dropping out.</p></article>
+    <article><h3>Estimates are labelled</h3><p>2025 firm counts aren't published yet. I carried 2024 forward, tested the error on earlier years, and flagged every estimated point.</p></article>
+  </div>
+</section>
+
+<section class="limits">
+  <h2>Limits</h2>
+  <p>Countries that started near 80% can't gain 30 points, so low starters will always look like bigger movers. The data also excludes agriculture, mining, and the financial sector.</p>
+</section>
+
+<nav class="next" aria-label="More work">
+  <a class="next-link" href="../payroll-explorer/"><span class="next-label">Next project</span><span class="next-title">Payroll Compliance Explorer</span></a>
+  <a class="btn btn-primary" href="../../#contact">Work with me</a>
+</nav>
+
+</main>
+
+<footer class="site-footer">
+  <span class="sig"><svg viewBox="0 0 321 398" aria-hidden="true"><path class="ink" d="M220 17 227 17 231 21 232 47 234 62 229 126 231 174 268 204 302 227 306 232 307 237 302 245 295 249 283 250 247 249 227 250 220 277 220 302 214 350 212 374 209 381 202 384 197 380 178 336 167 315 151 276 140 253 135 252 118 251 27 254 20 250 15 244 14 239 19 228 31 215 67 178 95 154 89 138 73 105 58 64 57 56 59 49 64 46 68 46 80 50 109 73 146 98 220 17Z"/></svg>Sara Zemrak · Compensation and workforce analytics</span>
+  <span>Public or synthetic data only. No employer data on this site.</span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume · Sara Zemrak</title>
+<meta name="description" content="Sara Zemrak's interactive resume: compensation, HR, payroll, and people data. Pick a lane to highlight the matching work.">
+<link rel="canonical" href="https://sarazemrak.github.io/resume/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Sara Zemrak · Resume">
+<meta property="og:description" content="Compensation, HR, and people data. Pick a lane to highlight the matching work.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/resume.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<header class="site-header">
+  <a class="brand" href="../">Sara Zemrak</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="../#work">Work</a>
+    <a href="../#services">Services</a>
+    <a href="../#about">About</a>
+    <a href="./" aria-current="page">Resume</a>
+    <a class="nav-cta" href="../#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="cv-head">
+  <p class="kicker">Resume</p>
+  <h1 class="display">Compensation, HR, and the <em>data</em> behind them</h1>
+  <p class="lede"><strong>Eight years in compensation, HR, payroll, and people data, across five employers.</strong> I've built pay bands at three law firms, run annual merit cycles end to end, and lead a regional salary survey of about 45 firms. An MBA and an MS in Applied Data Science sit behind the analysis, which I do in SQL, Power BI, and Excel.</p>
+  <div class="cv-contact">
+    <a class="email" href="mailto:sarazemrak@gmail.com">sarazemrak@gmail.com</a>
+    <a href="https://www.linkedin.com/in/sarazemrak">LinkedIn</a>
+    <span id="loc">Portland metro area, in person. Remote with teams anywhere.</span>
+    <button type="button" class="btn btn-ghost btn-small" id="print">Print or save as PDF</button>
+  </div>
+</section>
+
+<!-- Lens bar: highlights every item tagged with the chosen lane. -->
+<div class="lens-bar" role="group" aria-labelledby="lens-label">
+  <div class="lens-inner">
+    <span class="lens-label" id="lens-label">Highlight</span>
+    <span class="lens-note" aria-hidden="true">What are you hiring for?</span>
+    <div class="lens-chips">
+      <button type="button" class="lens" data-lens="all" aria-pressed="true">Everything</button>
+      <button type="button" class="lens" data-lens="comp" aria-pressed="false">Compensation</button>
+      <button type="button" class="lens" data-lens="rewards" aria-pressed="false">Benefits and payroll</button>
+      <button type="button" class="lens" data-lens="hr" aria-pressed="false">HR and people</button>
+      <button type="button" class="lens" data-lens="data" aria-pressed="false">Data and analytics</button>
+      <button type="button" class="lens" data-lens="systems" aria-pressed="false">HR systems</button>
+      <button type="button" class="lens" data-lens="ops" aria-pressed="false">Operations</button>
+    </div>
+    <span class="lens-tip">Ctrl or Cmd click to combine</span>
+  </div>
+</div>
+<p class="sr-only" id="lens-status" aria-live="polite"></p>
+
+<!-- Stat tiles: swapped per lens by resume.js. -->
+<section class="stats" aria-label="At a glance" id="stats"></section>
+
+<section class="viz-grid">
+  <figure class="viz timeline-fig">
+    <figcaption>
+      <span class="viz-title">Career timeline</span>
+      <span class="viz-sub" id="tl-sub">Every role, 2018 to 2026</span>
+    </figcaption>
+    <div class="timeline" id="timeline"></div>
+  </figure>
+
+  <figure class="viz">
+    <figcaption>
+      <span class="viz-title">Before and after</span>
+      <span class="viz-sub">Process changes I made, and what moved</span>
+    </figcaption>
+    <div class="ba" id="ba"></div>
+  </figure>
+
+</section>
+
+<figure class="viz tools-fig">
+  <figcaption>
+    <span class="viz-title">Toolkit</span>
+    <span class="viz-sub">What I build with each tool, strongest first</span>
+  </figcaption>
+  <div class="kit-wrap" id="toolkit"></div>
+</figure>
+
+<section class="cv-section" aria-labelledby="exp-title">
+  <h2 class="section-title" id="exp-title">Experience</h2>
+
+  <article class="role" data-role="MH">
+    <header class="role-head">
+      <div>
+        <h3>HR and Operations Administrator</h3>
+        <p class="org">Markowitz Herbold PC · Portland, Oregon</p>
+      </div>
+      <p class="when">Nov 2024 to Sep 2026</p>
+    </header>
+    <p class="role-sum">Led compensation, payroll, benefits, and people data for a professional services firm operating in Oregon, Washington, and New York. Partnered with the shareholders, who serve as the firm's executive team, on pay decisions backed by market pricing, budget modeling, and reporting that tied people cost to revenue.</p>
+    <ul>
+      <li data-lens="comp data">Built and maintained the firm's pay bands, leveling roles through job evaluation and grading and pricing them against market data, including the regional salary survey I lead. Ran the annual compensation cycle for 50 to 55 employees, modeling raises and bonuses against budget for shareholder review.</li>
+      <li data-lens="data comp">Wrote SQL and built Power BI reporting that showed close to $250,000 a year in underbilled time across 13 paralegals, setting each person's fully loaded cost against the revenue they produced. The analysis reshaped firm billing policy.</li>
+      <li data-lens="data hr">Moved attorney time-entry compliance from 30 percent to 95 percent in six months by building the reporting that made it visible, then following up with attorneys directly.</li>
+      <li data-lens="data systems">Architected the firm's first centralized data warehouse: designed the model, automated the flows between the HR, payroll, and time and billing systems, and standardized definitions across them.</li>
+      <li data-lens="systems hr data">Built the firm's applicant tracking system on Claude after the firm declined to purchase one, designing the data structure and validating outputs against known cases. Candidate follow-up went from sometimes a month or more to weekly, and within three months the duplicate check flagged a candidate carrying an agency fee exposure of around $20,000.</li>
+      <li data-lens="rewards data">Caught over 30 benefit billing discrepancies across multiple systems, including two shareholder plan cancellations reversed within 72 hours. Surfaced around $22,000 in incorrect charges, with at least $12,000 recovered. Ran the reconciliation as a standing control, tracing each discrepancy to its root cause in the source records.</li>
+      <li data-lens="rewards">Negotiated the most recent benefits renewal to an 11 percent increase, against the provider's 19 percent average increase in Oregon. Administered benefits through the annual renewal cycle, alongside the firm's 401(k) plan.</li>
+      <li data-lens="comp hr rewards">Maintained employment and pay compliance across Oregon, Washington, and New York, including FLSA exemption classification, pay transparency, and pay range disclosure.</li>
+      <li data-lens="hr comp">Partnered directly with shareholders and managing partners on pay, performance, promotion, and employee relations, including complex and sensitive cases.</li>
+      <li data-lens="rewards">Owned multi-state payroll processing across Oregon, Washington, and New York, logging every change and briefing the director on local law and tax requirements. Worked with Finance on the monthly payroll accruals and the year-end attorney bonus accruals.</li>
+      <li data-lens="rewards hr">Administered statutory leave end to end across FMLA, Oregon Family Leave, Paid Leave Oregon, and Paid Leave Washington, covering eligibility, notice, documentation, and pay treatment.</li>
+      <li data-lens="hr">Led full-cycle recruiting at 5 to 8 hires a year, from candidate evaluation through interviews, outside recruiter relationships, and offers.</li>
+      <li data-lens="ops">Ran day-to-day office operations and the building and facility vendors. Moved the firm to a new mail system vendor, holding fees at the prior rate when the incumbent planned a 50 percent increase.</li>
+    </ul>
+  </article>
+
+  <article class="role" data-role="RB">
+    <header class="role-head">
+      <div>
+        <h3>Firm Administrator</h3>
+        <p class="org">Rizzo Bosworth Eraut P.C. · Portland, Oregon</p>
+      </div>
+      <p class="when">Jun 2023 to Oct 2024</p>
+    </header>
+    <p class="role-sum">Ran HR, payroll, finance, and operations for a contingent-fee law firm, leading a team of three. Revenue tracked case outcomes, which made forecasting, budgeting, and performance-based pay the core of the role.</p>
+    <ul>
+      <li data-lens="comp">Ran the annual compensation review end to end: built the pay bands, ran the market analysis, and took recommendations to the partners for sign-off. Advised on compensation plans for attorneys and support staff.</li>
+      <li data-lens="data comp systems">Built billable-hour tracking and SQL Server reporting where no system existed, defining requirements with the attorneys and leadership who used it. Attorneys are measured and paid on those hours, so the reporting fed directly into pay and staffing decisions.</li>
+      <li data-lens="data ops">Cut each semi-monthly payroll's general ledger entries from about three hours to about 40 minutes by building a template that automated them. The firm still uses it.</li>
+      <li data-lens="systems rewards">Served as sole administrator of the HR, payroll, and benefits platforms, covering configuration, user support, troubleshooting, vendor escalation, and release testing.</li>
+      <li data-lens="rewards hr">Secured initial state approval for an employer paid-leave plan in place of the state scheme, taking the firm through the equivalent plan process as the legislation became mandatory.</li>
+      <li data-lens="comp rewards">Calculated and processed equity partner distributions under specialized case settlement agreements.</li>
+      <li data-lens="data ops">Built the annual budget, forecast revenue from billable hours, reported budget against actuals, and produced profitability reporting for firm leadership.</li>
+      <li data-lens="hr">Managed three direct reports and owned annual reviews, personnel matters, and professional development across a staff group of 12.</li>
+      <li data-lens="systems ops">Coordinated the firm's migration to NetDocuments, its document management system, with the vendor and the outside IT provider. Trained 22 staff and attorneys, then administered access and workspace permissions.</li>
+      <li data-lens="ops">Negotiated a new five-year office lease, then managed the $70,000 kitchen build-out over six months, designing it around a staff survey and running the contractor relationship through to completion.</li>
+    </ul>
+  </article>
+
+  <article class="role" data-role="RL">
+    <header class="role-head">
+      <div>
+        <h3>Office Administrator</h3>
+        <p class="org">Rose Law Firm, P.C. · Lake Oswego, Oregon</p>
+      </div>
+      <p class="when">Oct 2021 to May 2023</p>
+    </header>
+    <p class="role-sum">Ran HR, finance, and operations for a law firm, reporting directly to the owner and leading a team of three. Rebuilt the firm's books on arrival, then put structure around compensation reviews, attorney incentive payouts, and monthly performance reporting.</p>
+    <ul>
+      <li data-lens="comp">Ran the annual compensation review, building the pay bands and taking recommendations to the owner for sign-off. Advised on compensation plans for attorneys and support staff.</li>
+      <li data-lens="comp rewards data">Administered semi-annual attorney incentive payouts under a billable-hour bonus structure covering origination, profitability, collections, and delegation. Automated the performance reporting behind them in VBA, removing manual entry as a source of payout error.</li>
+      <li data-lens="ops data">Audited the firm's books on joining, identified systemic errors, and rebuilt them to restore compliance on the firm's client trust accounts (IOLTA). Advised the owner to end the contract CFO relationship, a recommendation the firm accepted.</li>
+      <li data-lens="data">Produced monthly reporting on attorney billable hours, profitability, and collections, building a new template that automated most of the process.</li>
+      <li data-lens="hr">Managed three direct reports and acted as operational manager for three more support staff. Trained the firm's bookkeeper in law-firm accounting. That person now leads finance at another law firm and manages their own staff.</li>
+      <li data-lens="hr rewards">Managed benefits, the employee handbook, performance reviews, payroll approval, and terminations, and negotiated the annual benefits renewals.</li>
+      <li data-lens="systems hr">Built the full candidate dispositioning workflow in Paylocity's applicant tracking system.</li>
+    </ul>
+  </article>
+
+  <article class="role" data-role="NL">
+    <header class="role-head">
+      <div>
+        <h3>Finance and HR Manager</h3>
+        <p class="org">Norway Labs, Inc. · Beaverton, Oregon</p>
+      </div>
+      <p class="when">May 2019 to Oct 2021</p>
+    </header>
+    <p class="role-sum">Sole finance and HR lead for an established precision instrument repair business serving aviation, military, and government clients, leading a team of four. Owned the people and finance side of a regulated government contractor, from compensation structure and payroll to pricing, forecasting, and ISO 9001 implementation.</p>
+    <ul>
+      <li data-lens="comp hr">Built out and formalized the company's compensation and wider HR structure, covering pay ranges for new hires, annual raises, and annual performance bonuses.</li>
+      <li data-lens="data">Produced the company's yearly pricing recommendations from five years of pricing data gathered with VBA web scraping. Once adopted, they lifted revenue 20 percent in the second year.</li>
+      <li data-lens="data ops">Compiled and cleaned five years of warranty repair records from the CRM, then forecast warranty rates by unit type and series. The analysis led the company to stop repairing one piece of equipment because of its high failure rate.</li>
+      <li data-lens="ops systems">Identified ISO 9001 certification as an emerging contractual requirement ahead of leadership, then led implementation across two divisions from gap analysis to the start of certification. Mapped every business process outside the technical workflow and wrote the procedures, process flows, and controlled documents, with evidence a third-party auditor could follow.</li>
+      <li data-lens="comp rewards">Administered an established phantom stock deferred compensation plan, running its distributions for two and a half years.</li>
+      <li data-lens="rewards ops">Ran payroll and its monthly accruals, accounts payable, accounts receivable, benefits, 401(k), and cash flow single-handed, and negotiated the annual benefits renewals.</li>
+      <li data-lens="hr">Managed four direct reports and oversaw parts of a 12-person team, covering hiring, supervision, mentoring, and development.</li>
+    </ul>
+  </article>
+
+  <article class="role" data-role="AT">
+    <header class="role-head">
+      <div>
+        <h3>Director of Operations</h3>
+        <p class="org">Alleviate Tax, LLC · Irvine, California</p>
+      </div>
+      <p class="when">May 2018 to May 2019</p>
+    </header>
+    <p class="role-sum">Early hire at a financial services firm specializing in tax debt relief, becoming Director of Operations within three months. Built the HR function from the ground up and ran a 30-person inbound service and outbound sales operation, including the commission and variable pay chain.</p>
+    <ul>
+      <li data-lens="hr rewards">Wrote the employee handbook and HR policies alongside an employment attorney, and ran full-cycle HR under California employment law across recruiting, payroll, benefits, retention, and performance management.</li>
+      <li data-lens="hr">Cut sales new-hire turnover 30 percent within three months, at a point when most new hires were leaving or being let go inside their first month. Introduced structured, scored interviews, rebuilt onboarding and sales training, and added 30, 60, and 90 day check-ins. People hired then are still with the company and have been promoted.</li>
+      <li data-lens="data comp">Built sales commission calculation and sales floor analytics where no system existed, covering more than $1 million in internal and affiliate sales. Automated the data pulls in VBA and presented the analysis to executive leadership, and the process was standardized firmwide.</li>
+      <li data-lens="comp rewards">Owned the variable pay chain from sales analytics through bonus and commission calculation to payroll, working from signed contract terms.</li>
+      <li data-lens="rewards">Built the benefits program from nothing: researched the market, selected the carriers and the broker, and structured a three-option health plan and a two-option dental plan.</li>
+      <li data-lens="systems rewards">Implemented ADP from the ground up, configuring the system and loading the full employee population.</li>
+      <li data-lens="systems hr">Served as primary administrator of Workday Recruiting straight after implementation, building the process and workflow and running close to 1,500 applications in the first year. Handed a working system to a dedicated recruiter at the six-month mark.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="cv-section cv-two" aria-label="Leadership, projects, and education">
+  <div>
+    <h2 class="section-title">Leadership</h2>
+    <article class="role" data-role="AL">
+      <header class="role-head">
+        <div>
+          <h3>Board Member and Resources Director</h3>
+          <p class="org">Association of Legal Administrators, Oregon Chapter</p>
+        </div>
+      </header>
+      <ul>
+        <li data-lens="comp data">Lead the chapter's regional salary survey, now in my third year as lead, covering about 45 firms and 40 job classifications. Write the job titles and descriptions the survey is built around, recruit the participating firms, and own the published report.</li>
+      </ul>
+    </article>
+
+    <h2 class="section-title">Projects</h2>
+    <article class="role" data-role="IP">
+      <ul>
+        <li data-lens="rewards data systems"><a href="../work/payroll-explorer/">Payroll Rules App</a>, in progress. A payroll and employment rules app in Python, Streamlit, and SQLite, with every rule cited to its source.</li>
+        <li data-lens="data"><a href="../work/cloud-adoption/">Cloud Adoption Dashboard</a>. A Power BI analysis of Eurostat cloud adoption data across 36 countries.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div>
+    <h2 class="section-title">Education</h2>
+    <article class="role keep" data-role="ED">
+      <ul class="edu">
+        <li data-lens="data hr"><strong>Master of Science, Applied Data Science for Business</strong>, Portland State University, 2023. Includes a Graduate Certificate in Human Resource Analytics. Turnover project: regression and decision trees in R.</li>
+        <li data-lens="hr data"><strong>Master of Business Administration</strong>, Portland State University, 2023. Capstone: a team study of a company's recruitment practices built on more than 50 interviews. Conducted about 20 of them, carried out all of the interview analysis, and presented the findings to the company's board and president.</li>
+      </ul>
+      <p class="edu-note">Both degrees completed concurrently while working full time.</p>
+    </article>
+
+    <h2 class="section-title">Affiliations</h2>
+    <article class="role" data-role="AF">
+      <ul>
+        <li data-lens="hr">Society for Human Resource Management (SHRM), member</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="cv-section" aria-labelledby="skills-title">
+  <h2 class="section-title" id="skills-title">Skills</h2>
+  <dl class="skills">
+    <div data-lens="comp rewards"><dt>Compensation</dt><dd>Job architecture, job evaluation and leveling, pay bands and salary ranges, annual merit and bonus cycle, merit and bonus budget modeling, new-hire offers</dd></div>
+    <div data-lens="comp data"><dt>Benchmarking</dt><dd>Market benchmarking and pricing, regional salary survey lead, job titles and descriptions, published market reporting</dd></div>
+    <div data-lens="comp rewards"><dt>Deferred pay</dt><dd>Phantom stock and nonqualified deferred compensation administration, equity partner distributions</dd></div>
+    <div data-lens="comp rewards hr"><dt>Pay compliance</dt><dd>FLSA exemption classification, multi-state payroll in California, New York, Oregon, and Washington, pay transparency in Oregon, Washington, and New York, EU Pay Transparency Directive tracked</dd></div>
+    <div data-lens="rewards"><dt>Benefits and leave</dt><dd>Benefits administration, renewal negotiation, carrier and broker selection, 401(k), FMLA, Oregon Family Leave, Paid Leave Oregon and Washington, equivalent plans</dd></div>
+    <div data-lens="rewards"><dt>Payroll</dt><dd>Multi-state US payroll, biweekly and semi-monthly cycles, payroll GL journal entries, payroll and bonus accruals, reconciliation</dd></div>
+    <div data-lens="hr"><dt>HR</dt><dd>Full-cycle recruiting, onboarding, performance management, employee relations, handbook and policy, multi-state employment compliance</dd></div>
+    <div data-lens="data"><dt>Analytics</dt><dd>Advanced Excel (Power Pivot, Power Query), SQL, Power BI, Excel VBA, Python, R</dd></div>
+    <div data-lens="systems"><dt>HR systems</dt><dd>ADP (implemented), Paylocity, Paychex, GNSA, Workday Recruiting, an applicant tracking system built on Claude</dd></div>
+    <div data-lens="systems data"><dt>AI</dt><dd>Claude (daily, for building working tools), Microsoft Power Automate, ChatGPT, Microsoft Copilot</dd></div>
+    <div data-lens="ops"><dt>Operations</dt><dd>Leases and build-outs, vendor management, office budgets, monthly and annual close, IOLTA trust accounting, budgeting and forecasting, SOPs, ISO 9001</dd></div>
+  </dl>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="sig"><svg viewBox="0 0 321 398" aria-hidden="true"><path class="ink" d="M220 17 227 17 231 21 232 47 234 62 229 126 231 174 268 204 302 227 306 232 307 237 302 245 295 249 283 250 247 249 227 250 220 277 220 302 214 350 212 374 209 381 202 384 197 380 178 336 167 315 151 276 140 253 135 252 118 251 27 254 20 250 15 244 14 239 19 228 31 215 67 178 95 154 89 138 73 105 58 64 57 56 59 49 64 46 68 46 80 50 109 73 146 98 220 17Z"/></svg>Sara Zemrak · Compensation and workforce analytics</span>
+  <span>Figures shown are results I delivered. Employer financials stay private.</span>
+</footer>
+</div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<script src="../assets/resume.js"></script>
+</body>
+</html>

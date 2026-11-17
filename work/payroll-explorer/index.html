@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payroll Compliance Explorer, build in progress · Sara Zemrak</title>
+<meta name="description" content="A map-based payroll checklist for HR and payroll teams, built in Python. Where the build stands, what's next, and what I've learned so far.">
+<link rel="canonical" href="https://sarazemrak.github.io/work/payroll-explorer/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Payroll Compliance Explorer, build in progress">
+<meta property="og:description" content="Pick a place, get the payroll rules that apply, and see the source for every one.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<header class="site-header">
+  <a class="brand" href="../../">Sara Zemrak</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="../../#work">Work</a>
+    <a href="../../#services">Services</a>
+    <a href="../../#about">About</a>
+    <a href="../../resume/">Resume</a>
+    <a class="nav-cta" href="../../#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="case-head">
+  <a class="back" href="../../#work">Back to all work</a>
+  <p class="kicker">Build in progress · Python</p>
+  <h1 class="display">Payroll Compliance <em>Explorer</em></h1>
+  <p class="lede">A map-based payroll checklist for HR and payroll teams. Pick a place, get the rules that apply there, and see the source for every one.</p>
+</section>
+
+<dl class="facts">
+  <div><dt>Status</dt><dd>Phase 0 done, Phase 1 underway</dd></div>
+  <div><dt>Stack</dt><dd>Python, pandas, SQLite, Streamlit, Plotly</dd></div>
+  <div><dt>First country</dt><dd>Ireland, then the UK</dd></div>
+  <div><dt>Code</dt><dd>Repo goes public when the first dashboard ships</dd></div>
+</dl>
+
+<!-- Swap for <img class="hero-shot" src="phase0-map.png" alt="..."> once a screenshot of the app is exported. -->
+<div class="hero-shot build build-wide" role="img" aria-label="Build progress: Phase 0 done, Phase 1 in progress, four phases to go."><p class="build-h">Build progress</p><ol class="phases"><li class="done"><span class="ph-n">0</span><span class="ph-t">Setup and Ireland map</span><span class="ph-s">Done</span></li><li class="now"><span class="ph-n">1</span><span class="ph-t">Rules table</span><span class="ph-s">In progress</span></li><li class=""><span class="ph-n">2</span><span class="ph-t">Dashboard</span></li><li class=""><span class="ph-n">3</span><span class="ph-t">Profile filter</span></li><li class=""><span class="ph-n">4</span><span class="ph-t">UK and Scotland</span></li><li class=""><span class="ph-n">5</span><span class="ph-t">Detail layer</span></li></ol></div>
+
+<section class="prose-block">
+  <div class="copy">
+    <h2 class="section-title">Why I'm building it</h2>
+  </div>
+  <div class="copy">
+    <p>When you run payroll in a new place, a search bar isn't much help. Search assumes you already know what to ask.</p>
+    <p>I wanted a checklist instead. Start with the global questions, like whether the employee is classified correctly. Then drill into the local ones, like which social contribution bands apply. Every rule links back to the law or guidance it came from.</p>
+    <p>It's built for the HR or payroll person doing the work, not for employees looking up their own pay.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2 class="section-title">Where it stands</h2>
+    <p>Each phase ends in something that works on its own, so the project is useful at every step.</p>
+  </div>
+  <ol class="phases">
+    <li class="phase">
+      <span class="phase-num">Phase 0</span>
+      <div><h3>Setup and a working map</h3><p>Repo, Python environment, and Ireland's 26 counties rendering in Streamlit from open boundary data.</p></div>
+      <span class="status status-done">Done</span>
+    </li>
+    <li class="phase is-next">
+      <span class="phase-num">Phase 1</span>
+      <div><h3>Rules table with citations</h3><p>Irish leave, working time, PAYE, USC, PRSI, and minimum wage rules in a SQLite table, each with its source.</p></div>
+      <span class="status status-next">In progress</span>
+    </li>
+    <li class="phase">
+      <span class="phase-num">Phase 2</span>
+      <div><h3>Dashboard v1</h3><p>Topic tiles, the map, the global and Ireland checklists, and a link to the source on every rule.</p></div>
+      <span class="status">Planned</span>
+    </li>
+    <li class="phase">
+      <span class="phase-num">Phase 3</span>
+      <div><h3>Employee profile filter</h3><p>Describe the employee once and the checklist narrows to the rules that apply to them.</p></div>
+      <span class="status">Planned</span>
+    </li>
+    <li class="phase">
+      <span class="phase-num">Phase 4</span>
+      <div><h3>A second country</h3><p>The UK, with a drill-down for Scotland's own income tax bands.</p></div>
+      <span class="status">Planned</span>
+    </li>
+    <li class="phase">
+      <span class="phase-num">Phase 5</span>
+      <div><h3>Detail layer</h3><p>Payslip-style explanations and a flag on rules that changed recently.</p></div>
+      <span class="status">Planned</span>
+    </li>
+  </ol>
+</section>
+
+<section class="prose-block">
+  <div class="copy">
+    <h2 class="section-title">Up next</h2>
+    <p>Phase 1 is where the data science lives. An AI model drafts the rule extraction from the source documents. I check every rule against the source by hand and log how many needed correcting. That correction rate gets published with the app.</p>
+  </div>
+  <ul class="todo">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path class="doodle" d="M4 4.6 C 9 4.2, 15 4.8, 20 4.4 L 20.3 19.4 C 15 19.8, 9 19.2, 3.8 19.6 Z"/></svg><span>Design the rules table: rule, scope, effective date, source link, and a verified flag</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path class="doodle" d="M4 4.6 C 9 4.2, 15 4.8, 20 4.4 L 20.3 19.4 C 15 19.8, 9 19.2, 3.8 19.6 Z"/></svg><span>Pull the Irish leave and working time rules from official guidance</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path class="doodle" d="M4 4.6 C 9 4.2, 15 4.8, 20 4.4 L 20.3 19.4 C 15 19.8, 9 19.2, 3.8 19.6 Z"/></svg><span>Add PAYE, USC, PRSI, and minimum wage</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path class="doodle" d="M4 4.6 C 9 4.2, 15 4.8, 20 4.4 L 20.3 19.4 C 15 19.8, 9 19.2, 3.8 19.6 Z"/></svg><span>Verify every rule and record the correction rate</span></li>
+  </ul>
+</section>
+
+<section class="notes">
+  <div class="notes-intro">
+    <h2 class="section-title">Notes to past me</h2>
+    <p>Things I wish someone had told me before I started.</p>
+  </div>
+  <div class="note-grid">
+    <article><h3>Newer isn't always better</h3><p>The newest county boundaries are the full-detail version. On a map this size they look the same as the generalized file, but the load times aren't even close. I went with the generalized one, even though it's a little older.</p></article>
+    <article><h3>Read the prompt before you type</h3><p>A few commands ran in the wrong folder before I made checking the terminal prompt a habit.</p></article>
+    <article><h3>Commit small, commit often</h3><p>Small commits with plain messages make it easy to see what changed and to back out of a bad idea.</p></article>
+  </div>
+</section>
+
+<nav class="next" aria-label="More work">
+  <a class="next-link" href="../cloud-adoption/"><span class="next-label">Next project</span><span class="next-title">Where European cloud adoption is growing</span></a>
+  <a class="btn btn-primary" href="../../#contact">Work with me</a>
+</nav>
+
+</main>
+
+<footer class="site-footer">
+  <span class="sig"><svg viewBox="0 0 321 398" aria-hidden="true"><path class="ink" d="M220 17 227 17 231 21 232 47 234 62 229 126 231 174 268 204 302 227 306 232 307 237 302 245 295 249 283 250 247 249 227 250 220 277 220 302 214 350 212 374 209 381 202 384 197 380 178 336 167 315 151 276 140 253 135 252 118 251 27 254 20 250 15 244 14 239 19 228 31 215 67 178 95 154 89 138 73 105 58 64 57 56 59 49 64 46 68 46 80 50 109 73 146 98 220 17Z"/></svg>Sara Zemrak · Compensation and workforce analytics</span>
+  <span>Public or synthetic data only. No employer data on this site.</span>
+</footer>
+
+</div>
+</body>
+</html>
